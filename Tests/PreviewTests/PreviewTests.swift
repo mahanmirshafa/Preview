@@ -1,11 +1,25 @@
 import XCTest
 @testable import Preview
 
-final class PreviewTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(Preview().text, "Hello, World!")
+final class PreivewTests: XCTestCase {
+    
+    func testPreviewUIView() throws {
+        
+        let view = UIView()
+        if #available(iOS 13.0, *) {
+            XCTAssertNotNil(Preview(view: view))
+        } else {
+            // NO TEST NEEDED
+        }
+    }
+    
+    func testPreviewUIViewController() throws {
+        
+        let vc = UIViewController()
+        if #available(iOS 13.0, *) {
+            XCTAssertNotNil(Preview(view: vc.view))
+        } else {
+            // NO TEST NEEDED
+        }
     }
 }
