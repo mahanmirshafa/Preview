@@ -6,5 +6,6 @@ public extension UIView {
     
     func showPreview() -> some View {
         Preview(view: self)
+        print("Version Test")
     }
 }
